@@ -1,4 +1,10 @@
-<style>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>SOFIA cumple años</title>
+    <style>
         @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap');
 
         html, body {
@@ -13,7 +19,7 @@
 
         .poster {
             position: relative;
-            width: 100%; /* CORREGIDO: Cambiado de 120vw a 100% para que no se salga de la pantalla */
+            width: 100%;
             height: 100vh;
             background: url('jul.png') center/cover no-repeat;
             display: flex;
@@ -57,7 +63,7 @@
         .star-2 { top: 19%; right: 10%; animation-delay: 2s; transform: rotate(27deg); width: 5vw; }
         .star-3 { top: 38%; left: 30%; animation-delay: 0.5s; transform: rotate(10deg); width: 7vw; }
         .star-4 { top: 60%; right: 8%; animation-delay: 1.5s; transform: rotate(-25deg); width: 8.5vw; }
-        .star-5 { top: 20%; right: 10%; animation-delay: 1s; transform: rotate(-30deg); width: 5vw; }
+        .star-5 { top: 20%; right: 10%; animation-delay: 1s; transform: rotate(-30deg); width: 5vw; } /* CORREGIDO: Eliminada la 's' extra en '10s%' */
 
         @keyframes floatStar {
             0% { transform: translateY(0px) scale(1) rotate(0deg); filter: drop-shadow(0 0 2px #fff); }
@@ -86,7 +92,7 @@
         /* Contenedor central absoluto */
         .center-content-area {
             position: absolute;
-            top: 45%; /* Ajustado ligeramente hacia arriba para dejar más aire abajo */
+            top: 45%;
             left: 50%;
             transform: translate(-50%, -50%);
             display: flex;
@@ -136,15 +142,14 @@
             100% { transform: translateY(-3vw) rotate(3deg); }
         }
 
-        /* ÁREA INFERIOR (BOTONES MEJORADOS) */
+        /* ÁREA INFERIOR (BOTONES GRANDES ADAPTADOS) */
         .bottom-area {
             display: flex;
             justify-content: center;
-            gap: 4vw; /* Un poco menos de espacio entre ellos para que quepan mejor siendo grandes */
+            gap: 4vw;
             align-items: center;
-            flex-wrap: nowrap; /* Evita que se rompan en dos filas en pantallas estándar */
-            
-            top: 70vh; 
+            flex-wrap: nowrap;
+            top: 70vh;
             position: absolute;
             width: 100%;
             padding: 0 4vw;
@@ -156,8 +161,8 @@
             display: inline-block;
             filter: drop-shadow(3px 3px 6px rgba(0,0,0,0.5));
             transition: transform 0.2s ease;
-            width: 28vw; /* MODIFICADO: Subido de 25vw a 28vw para que sean visiblemente más grandes */
-            max-width: 140px; /* Candado de seguridad para pantallas de escritorio muy grandes */
+            width: 28vw;
+            max-width: 140px;
         }
 
         .info-link-independiente:hover {
@@ -165,17 +170,9 @@
         }
 
         /* --- ELEMENTOS INDIVIDUALES --- */
-        .lugar-container-independiente {
-            transform: rotate(-4deg);
-        }
-
-        .fecha-img-independiente {
-            transform: rotate(1deg);
-        }
-
-        .hora-img-independiente {
-            transform: rotate(-2deg);
-        }
+        .lugar-container-independiente { transform: rotate(-4deg); }
+        .fecha-img-independiente { transform: rotate(1deg); }
+        .hora-img-independiente { transform: rotate(-2deg); }
 
         .info-png-base {
             width: 100%;
@@ -183,3 +180,50 @@
             display: block;
         }
     </style>
+</head>
+<body>
+
+<div class="poster">
+    <div class="overlay-png"></div>
+
+    <!-- Elementos infantiles decorativos flotantes -->
+    <svg class="floating-star star-1" viewBox="0 0 24 24" fill="#FFEB3B"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+    <svg class="floating-star star-2" viewBox="0 0 24 24" fill="#FF4081"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+    <svg class="floating-star star-3" viewBox="0 0 24 24" fill="#00E676"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+    <svg class="floating-star star-4" viewBox="0 0 24 24" fill="#00B0FF"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+    <svg class="floating-star star-5" viewBox="0 0 24 24" fill="#FFFFFF"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+
+    <div class="top-text-area">
+        <div class="come-to">ven al</div>
+    </div>
+
+    <div class="center-content-area">
+        <div class="cumple-anos">cumple años de</div>
+        <div class="sofia-container">
+            <!-- ⚠️ IMPORTANTE: Si tus imágenes están dentro de una carpeta llamada 'img', cambia esto a src="img/s.png" -->
+            <img src="s.png" alt="S" class="sofia-img">
+            <img src="o.png" alt="O" class="sofia-img">
+            <img src="l.png" alt="L" class="sofia-img">
+        </div>
+    </div>
+
+    <div class="bottom-area">
+        <!-- 1. LUGAR -->
+        <a href="https://maps.app.goo.gl/x7pTnN4En8xvmPQJ6" target="_blank" class="info-link-independiente lugar-container-independiente">
+            <img src="lugar.png" alt="Lugar" class="info-png-base">
+        </a>
+
+        <!-- 2. FECHA -->
+        <a href="#" target="_blank" class="info-link-independiente fecha-img-independiente">
+            <img src="fecha.png" alt="Fecha" class="info-png-base">
+        </a>
+
+        <!-- 3. HORA -->
+        <a href="#hora" class="info-link-independiente hora-img-independiente">
+            <img src="hora.png" alt="Hora" class="info-png-base">
+        </a>
+    </div>
+</div>
+
+</body>
+</html>
