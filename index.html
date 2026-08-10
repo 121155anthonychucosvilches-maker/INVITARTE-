@@ -151,16 +151,18 @@
             100% { transform: translateY(-3vw) rotate(3deg); }
         }
 
-        /* ÁREA INFERIOR (REPOSICIONADA) */
+        /* ÁREA INFERIOR (MUCHO MÁS CERCA DEL CENTRO) */
         .bottom-area {
             display: flex;
-            justify-content: space-around;
-            align-items: flex-end;
-            /* CAMBIO AQUÍ: Ajustado de 3vh a 25vh para moverlo hacia arriba */
-            bottom: 25vh; 
-            position: absolute; /* Necesario para que 'bottom' funcione respecto al .poster */
+            /* CAMBIO AQUÍ: Centrado y con espacio definido */
+            justify-content: center; 
+            gap: 6vw; 
+            align-items: center; /* Alineados al centro verticalmente */
+            
+            /* CAMBIO AQUÍ: Posicionado absoluto respecto al .poster */
+            top: 60vh; /* Justo debajo del nombre SOL */
+            position: absolute; 
             width: 100%;
-            padding: 0 2vw;
             box-sizing: border-box;
         }
 
@@ -169,6 +171,8 @@
             display: inline-block;
             filter: drop-shadow(3px 3px 6px rgba(0,0,0,0.5));
             transition: transform 0.2s ease;
+            /* Tamaño base de los iconos ajustado */
+            width: 25vw; 
         }
 
         .info-link-independiente:hover {
@@ -177,26 +181,20 @@
 
         /* --- ELEMENTOS INDIVIDUALES --- */
 
-        /* 1. LUGAR (CON ENLACE AÑADIDO) */
         .lugar-container-independiente {
-            width: 28vw;
             transform: rotate(-4deg);
         }
 
-        /* 2. FECHA (con enlace a cronograma) */
         .fecha-img-independiente {
-            width: 28vw;
             transform: rotate(1deg);
         }
 
-        /* 3. HORA */
         .hora-img-independiente {
-            width: 28vw;
             transform: rotate(-2deg);
         }
 
         .info-png-base {
-            width: 120%;
+            width: 100%; /* Ocupa todo el ancho del .info-link-independiente */
             height: auto;
             display: block;
         }
@@ -228,12 +226,12 @@
     </div>
 
     <div class="bottom-area">
-        <!-- 1. LUGAR (ENLACE AÑADIDO AQUÍ) -->
+        <!-- 1. LUGAR -->
         <a href="https://maps.app.goo.gl/x7pTnN4En8xvmPQJ6" target="_blank" class="info-link-independiente lugar-container-independiente">
             <img src="lugar.png" alt="Lugar" class="info-png-base">
         </a>
 
-        <!-- 2. FECHA (Recuerda añadir tu enlace al cronograma aquí) -->
+        <!-- 2. FECHA -->
         <a href="AQUÍ TU ENLACE DEL CRONOGRAMA (DRIVE)" target="_blank" class="info-link-independiente fecha-img-independiente">
             <img src="fecha.png" alt="Fecha" class="info-png-base">
         </a>
