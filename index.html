@@ -74,7 +74,6 @@
         .star-4 { top: 60%; right: 8%; animation-delay: 1.5s; transform: rotate(-25deg); width: 8.5vw; }
         .star-5 { top: 20%; right: 10s%; animation-delay: 1s; transform: rotate(-30deg); width: 5vw; }
 
-
         @keyframes floatStar {
             0% { transform: translateY(0px) scale(1) rotate(0deg); filter: drop-shadow(0 0 2px #fff); }
             100% { transform: translateY(-12px) scale(1.1) rotate(10deg); filter: drop-shadow(0 0 8px #ffeb3b); }
@@ -116,7 +115,7 @@
             font-family: 'Caveat', cursive;
             font-size: 13vw;
             color: #ffffff;
-            margin-top: 4vh; 
+            margin-top: 4vh;
             margin-bottom: -2vh;
             text-shadow: 3px 3px 6px rgba(0,0,0,0.8);
             font-style: italic;
@@ -152,18 +151,19 @@
             100% { transform: translateY(-3vw) rotate(3deg); }
         }
 
-        /* ÁREA INFERIOR CON ELEMENTOS INDEPENDIENTES */
+        /* ÁREA INFERIOR (REPOSICIONADA) */
         .bottom-area {
             display: flex;
-            justify-content: space-around; /* Distribuye los 3 elementos uniformemente */
+            justify-content: space-around;
             align-items: flex-end;
-            margin-bottom: 3vh; /* Separación del borde inferior */
+            /* CAMBIO AQUÍ: Ajustado de 3vh a 25vh para moverlo hacia arriba */
+            bottom: 25vh; 
+            position: absolute; /* Necesario para que 'bottom' funcione respecto al .poster */
             width: 100%;
             padding: 0 2vw;
             box-sizing: border-box;
         }
 
-        /* Estilo común para los enlaces de información */
         .info-link-independiente {
             text-decoration: none;
             display: inline-block;
@@ -172,32 +172,31 @@
         }
 
         .info-link-independiente:hover {
-            transform: scale(1.1) rotate(0deg); /* Efecto al pasar el ratón */
+            transform: scale(1.1) rotate(0deg);
         }
 
         /* --- ELEMENTOS INDIVIDUALES --- */
 
-        /* 1. LUGAR (con enlace a Google Maps) */
+        /* 1. LUGAR (CON ENLACE AÑADIDO) */
         .lugar-container-independiente {
-            width: 40vw; /* Tamaño relativo */
-            transform: rotate(-4deg); /* Inclinación */
+            width: 28vw;
+            transform: rotate(-4deg);
         }
 
         /* 2. FECHA (con enlace a cronograma) */
         .fecha-img-independiente {
-            width: 38vw; /* Tamaño relativo */
-            transform: rotate(1deg); /* Inclinación */
+            width: 28vw;
+            transform: rotate(1deg);
         }
 
         /* 3. HORA */
         .hora-img-independiente {
-            width: 28vw; /* Tamaño relativo */
-            transform: rotate(-2deg); /* Inclinación */
+            width: 28vw;
+            transform: rotate(-2deg);
         }
 
-        /* Imagen base para todos los elementos */
         .info-png-base {
-            width: 100%;
+            width: 120%;
             height: auto;
             display: block;
         }
@@ -213,6 +212,7 @@
     <svg class="floating-star star-2" viewBox="0 0 24 24" fill="#FF4081"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
     <svg class="floating-star star-3" viewBox="0 0 24 24" fill="#00E676"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
     <svg class="floating-star star-4" viewBox="0 0 24 24" fill="#00B0FF"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+    <svg class="floating-star star-5" viewBox="0 0 24 24" fill="#FFFFFF"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
 
     <div class="top-text-area">
         <div class="come-to">ven al</div>
@@ -227,19 +227,18 @@
         </div>
     </div>
 
-    <!-- AQUÍ PONES TUS IMÁGENES DE INFORMACIÓN INDEPENDIENTES -->
     <div class="bottom-area">
-        <!-- 1. LUGAR (Reemplaza 'lugar.png' por tu archivo y añade el enlace de Google Maps) -->
-        <a href="AQUÍ TU ENLACE DE GOOGLE MAPS" target="_blank" class="info-link-independiente lugar-container-independiente">
+        <!-- 1. LUGAR (ENLACE AÑADIDO AQUÍ) -->
+        <a href="https://maps.app.goo.gl/x7pTnN4En8xvmPQJ6" target="_blank" class="info-link-independiente lugar-container-independiente">
             <img src="lugar.png" alt="Lugar" class="info-png-base">
         </a>
 
-        <!-- 2. FECHA (Reemplaza 'fecha.png' por tu archivo y añade el enlace al cronograma) -->
+        <!-- 2. FECHA (Recuerda añadir tu enlace al cronograma aquí) -->
         <a href="AQUÍ TU ENLACE DEL CRONOGRAMA (DRIVE)" target="_blank" class="info-link-independiente fecha-img-independiente">
             <img src="fecha.png" alt="Fecha" class="info-png-base">
         </a>
 
-        <!-- 3. HORA (Reemplaza 'hora.png' por tu archivo) -->
+        <!-- 3. HORA -->
         <a href="#hora" class="info-link-independiente hora-img-independiente">
             <img src="hora.png" alt="Hora" class="info-png-base">
         </a>
